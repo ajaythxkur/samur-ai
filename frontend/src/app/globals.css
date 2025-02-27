@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    /* --background: #1C2726; */
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .agent-card{
+ background-image:linear-gradient(45deg, rgb(45, 60, 60) 0%, rgb(28, 39, 38) 100%);
+} */
+.transition{
+  transition:all 0.5s ease;
+}
+
+
