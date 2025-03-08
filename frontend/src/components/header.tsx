@@ -2,9 +2,8 @@
 import Image from "next/image"
 import SplashCursor from '@/ui/cursor'
 import Link from "next/link"
-import { ConnectWallet } from "./ConnectWallet"
 import Aurora from '@/ui/aurora';
-
+import { WalletButton } from "../../components/WalletButton"
 export default function Header() {
     return (
         <>
@@ -25,7 +24,7 @@ export default function Header() {
                                     <Link href="/#"><li className="hover:text-cyan-800 transition">Docs</li></Link>
                                 </ul>
                             </div>
-                            <ConnectWallet />
+                            <WalletButton />
                         </div>
                     </div>
                 </div>

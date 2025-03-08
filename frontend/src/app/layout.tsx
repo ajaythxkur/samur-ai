@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { WalletProvider } from "../../context/WalletProvider";
-// import { Toaster } from "sonner";
 
 export default function RootLayout({
   children,
@@ -28,7 +27,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </WalletProvider>
-        {/* <Toaster /> */}
       </body>
     </html>
   );

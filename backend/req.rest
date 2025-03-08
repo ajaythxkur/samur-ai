@@ -2,5 +2,44 @@
 
 @contentType=application/json
 
-POST {{host}}/api/create-agent
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQxNDI1ODc4fQ.9ocIoJjIlR4LU5vTC08_EVn92WCf-p1BjgXBnLmLL3Q
+
+POST {{host}}/api/user/login
 Content-Type: {{contentType}}
+
+{
+    "signature": "0x379996f27135f7b397d5cf9bf5d600f7ed3f86b4b484b4f9efcb90870f3b2ab5ab0415384383a5e73711251493210632292385b3373e23fec36ff88ade5cdc02",
+    "publicKey": "0xcb0268db2a262b7f8dea67389fe7e49f0fe58f8d1acfd3245ac6d1f8e417ee92",
+    "address": "0x3128936eff12dc2953ea3189d31fcd60db1397546017180f72f9ff5e59bfed13",
+    "message": "APTOS\nmessage: This is a message from Samur-Ai\nnonce: 0.49800541785312147"
+}
+
+###
+GET {{host}}/api/user/get/0x3128936eff12dc2953ea3189d31fcd60db1397546017180f72f9ff5e59bfed13
+
+###
+POST {{host}}/api/agent/create
+Authorization: Bearer {{token}}
+Content-Type: {{contentType}}
+
+{
+    "name": "Aptos Frog",
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg",
+    "description": "Aptos Frog is an ai agent that performs multiple tasks"
+}
+
+###
+GET {{host}}/api/agent/get
+
+###
+GET {{host}}/api/agent/get/2
+
+###
+POST {{host}}/api/agent/chat/2
+Content-Type: {{contentType}}
+
+{
+    "messages": ["Hello agent"],
+    "show_intermediate_steps": true
+}
+

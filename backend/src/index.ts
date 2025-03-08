@@ -5,6 +5,7 @@ import helmet from "helmet";
 import http from "http";
 import { createLogger } from "./misc/utils";
 import { agentRoutes } from "./routes/agent";
+import { userRoutes } from "./routes/user";
 
 const logger = createLogger("index")
 const app = express();
@@ -17,7 +18,8 @@ app.get("/", (_req: express.Request, res: express.Response) => {
 })
 
 // ROUTES START
-app.use("/api/create-agent", agentRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/agent", agentRoutes);
 // ROUTES END
 
 app.use("*", (_req: express.Request, res: express.Response) => {
